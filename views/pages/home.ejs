@@ -1,0 +1,57 @@
+<%layout("/layouts/boilerplate.ejs")-%>
+
+<div class="description mt-5">
+  <div class="line1">
+    <h1>Building Digital Solutions</h1>
+  </div>
+  <div class="line2">
+    <h1>That Impowers Your Business</h1>
+  </div>
+  <div class="service-info mt-2">
+    <p>Web-Development | </p>
+    <p>&nbsp;Web-Applications | </p>
+    <p>&nbsp;UI-UX Design | </p> 
+    <p>&nbsp;SEO-Maintainance</p>
+  </div>
+  <div class="description-btn mt-2">
+    <button class="service-btn"><a>Our Services</a></button>&nbsp;
+    <button class="contact-btn"><a>Contact Us</a></button>
+  </div>
+</div>
+<div>
+  <h2 class="service-heading mt-2">Services Preview</h2>
+<div class="services-preview mt-2">
+  <div class="row row-cols-lg-4 row-cols-md-3 row-cols-sm-3">
+    <% for(let service of allServices) { %>
+    <a href="/services/<%=service._id%>" class="service-link">
+      <div class="card col service-card text-center">
+        <div class="card-body">
+          <img src="<%=service.image%>" class="service-img" alt="service-image">
+          <p class="card-text card-title mt-3">
+            <%=service.title%><br>
+          </p>
+        </div>
+      </div>
+    </a>
+    <% } %>
+  </div>
+</div>
+</div>
+<h2 class="portfolio-heading">Portfolio Preview</h2>
+<div class="row row-cols-lg-4 row-cols-md-3 row-cols-sm-1 g-3 mb-5 mt-3">
+  <% for(let portfolio of allPortfolio) { %>
+    <div class="col">
+      <a href="/services/<%=portfolio._id%>" class="portfolio-link text-decoration-none">
+        <div class="card h-100 portfolio-card text-center">
+          <div class="card-body">
+            <img src="<%=portfolio.profile%>" class="portfolio-img" alt="portfolio-image">
+            <h5 class="card-title mt-3"><%=portfolio.name%></h5>
+            <p class="card-text"><%=portfolio.role%></p>
+          </div>
+        </div>
+      </a>
+    </div>
+  <% } %>
+</div>
+
+</div>
