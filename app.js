@@ -11,6 +11,10 @@ const User = require("./models/user.js");
 const wrapAsync = require("./utils/wrapAsync.js");
 const ExpressError = require("./utils/ExpressError.js");
 
+const aboutRouter = require("./routes/about.js");
+const orvaneRouter = require("./routes/orvane.js");
+
+
 
 
 main()
@@ -37,37 +41,10 @@ app.get("/orvane", async (req, res) => {
     res.render("pages/home.ejs", {allServices, allPortfolio});
 })
 
-app.get("/about/who-we-are", (req, res) => {
-  res.render("abouts/who-we-are.ejs");
-});
 
-app.get("/about/our-process", (req, res) => {
-  res.render("abouts/process.ejs");
-})
+app.use("/about", aboutRouter);
+app.use("/orvane",orvaneRouter);
 
-app.get("/orvane/signup", (req, res) => {
-  res.render("users/signup.ejs");
-})
-
-app.get("/orvane/contact", (req, res) => {
-  res.render("contact.ejs");
-})
-
-app.get("/orvane/services", (req, res) => {
-  res.render("services/service.ejs");
-})
-
-app.get("/orvane/terms", (req, res) => {
-  res.render("termsandprivacy/term.ejs");
-})
-
-app.get("/orvane/privacy", (req, res) => {
-  res.render("termsandprivacy/privacy.ejs");
-})
-
-app.get("/orvane/log-in", (req, res) => {
-  res.render("users/login.ejs");
-})
 
 app.use((req, res, next) => {
   next(new ExpressError(404, "Page Not Found"));
