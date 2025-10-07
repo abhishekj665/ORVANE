@@ -29,7 +29,14 @@
           <a class="nav-link fs-5" href="#">Employees</a>
         </li>
         <li class="nav-item">
-          <a href="/orvane/signup"><button class="btn Quote-btn">SignUp</button></a>
+          <% if (user && user.username) { %>
+            <div class="profile-section">
+              <span style="font-size: larger;"><i class="fa-solid fa-user"></i>&nbsp;<%= user.username %></span>
+              <a href="/orvane/log-out" style="text-decoration: none; margin-left: 1rem;color: rgb(237, 16, 16); font-size: larger;">Logout</a>
+             </div>
+            <% } else { %>
+                  <a href="/orvane/signup"><button class="btn Quote-btn">SignUp</button></a>
+             <% } %>
         </li>
       </ul>
     </div>

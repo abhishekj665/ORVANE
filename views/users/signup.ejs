@@ -7,20 +7,21 @@
             <div class="mb-3">
                 <label for="username" class="form-label">Username</label>
                 <input name="username" placeholder="Add a username" type="text" class="form-control" id="username" required>
-                <div class="valid-feedback">Username is valid.</div>
+                <div class="invalid-feedback">enter valid username</div>
             </div>
             <div class="mb-3">
                 <label for="email" class="form-label">Email</label>
-                <input name="email" placeholder="Add Email" type="text" class="form-control" id="email" required>
+                <input name="email" placeholder="Add Email" type="email" class="form-control" id="email" required>
+                <div class="invalid-feedback">enter valid email</div>
             </div>
             <div class="mb-3">
                 <label for="password" class="form-label">Password</label>
                 <input name="password" placeholder="Enter a Password" type="password" class="form-control" id="password" required>
-                <div class="valid-feedback">Username is valid.</div>
+                <div class="invalid-feedback">enter valid password</div>
             </div>
             <button class="btn btn-success mb-3 mt-2">SignUp</button>
         </form>
-        <div ><a href="/orvane/log-in" id="login">Already have an account</a></div>
+        <div ><a href="/orvane/log-in" class="login">Already have an account</a></div>
     </div>
 </div>
 

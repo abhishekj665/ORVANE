@@ -13,6 +13,11 @@ body {
   
 }
 
+#web-page{
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+
 
 
 
@@ -616,12 +621,12 @@ a:focus {
   outline: none;
 }
 
-#login{
+.login{
   text-decoration: none;
   color: #0e96ee;
 }
 
-#login:hover{
+.login:hover{
   color:#0796f6 ;
   text-decoration: underline;
 }
