@@ -1,6 +1,7 @@
 <nav class="navbar navbar-expand-md bg-body-light border-bottom sticky-top">
   <div class="container-fluid">
-    <a class="navbar-brand fs-1" href="/orvane"><i class="fa-brands fa-opera fa-flip" style="color: #FFD43B;"></i></i>&nbsp;ORVANE</a>
+    <a class="navbar-brand fs-1" href="/orvane"><i class="fa-brands fa-opera fa-flip"
+        style="color: #FFD43B;"></i></i>&nbsp;ORVANE</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -10,7 +11,8 @@
           <a class="nav-link fs-5" aria-current="page" href="/orvane">Home</a>
         </li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle fs-5" href="#" id="aboutDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <a class="nav-link dropdown-toggle fs-5" href="#" id="aboutDropdown" role="button" data-bs-toggle="dropdown"
+            aria-expanded="false">
             About
           </a>
           <ul class="dropdown-menu" aria-labelledby="aboutDropdown">
@@ -20,10 +22,10 @@
           </ul>
         </li>
         <li class="nav-item">
-          <a class="nav-link fs-5" href="#">Services</a>
+          <a class="nav-link fs-5" href="/orvane/services">Services</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link fs-5" href="#">Portfolio</a>
+          <a class="nav-link fs-5" href="/orvane/portfolio">Portfolio</a>
         </li>
         <li class="nav-item">
           <a class="nav-link fs-5" href="#">Employees</a>
@@ -31,14 +33,28 @@
         <li class="nav-item">
           <% if (user && user.username) { %>
             <div class="profile-section">
-              <span style="font-size: larger;"><i class="fa-solid fa-user"></i>&nbsp;<%= user.username %></span>
-              <a href="/orvane/log-out" style="text-decoration: none; margin-left: 1rem;color: rgb(237, 16, 16); font-size: larger;">Logout</a>
-             </div>
-            <% } else { %>
-                  <a href="/orvane/signup"><button class="btn Quote-btn">SignUp</button></a>
-             <% } %>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link fs-5" href="#" id="aboutDropdown" role="button" data-bs-toggle="dropdown"
+            aria-expanded="false">
+            <span style="font-size: large; color: #2b6cb0;"><i class="fa-solid fa-user"
+                style="color: #2b6cb0;"></i>&nbsp;<%= user.username %></span>
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="aboutDropdown">
+            <li><a class="dropdown-item" href="#">Profile</a></li>
+            <li><a class="dropdown-item" href="/orvane/signup">SignUp</a></li>
+            <li><a href="/orvane/log-out"
+                style="text-decoration: none;color: rgb(237, 16, 16); font-size: large;margin-left: 1rem;" id="dropdown-logout" >Logout</a>
+            </li>
+          </ul>
         </li>
-      </ul>
+
     </div>
+    <% } else { %>
+      <a href="/orvane/log-in" style="font-size: x-large;text-decoration: none;" id="sign-a">Sign in</a>
+      <% } %>
+        </li>
+        </ul>
+  </div>
   </div>
 </nav>

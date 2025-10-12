@@ -1,0 +1,32 @@
+<%layout("/layouts/boilerplate.ejs")-%>
+  <link rel="stylesheet" href="/css/portfolio.css">
+
+  <section id="portfolio" class="py-5">
+    <div class="container text-center">
+      <h2 style="font-size: 40px;" class=" mb-3 text-warning">Our Portfolio</h2>
+      <p class="text-secondary mb-5" style="font-size: 20px;">
+        A showcase of our real-world projects — blending design, data, and development into digital excellence.
+      </p>
+
+      <div class="row g-4">
+        <!-- Project 1 -->
+        <% for(let portfolio of Portfolios) { %>
+          <div class="col-md-4 mb-5">
+            <a href="/orvane/portfolio/<%= portfolio._id %>">
+              <div class="card project-card border-0 shadow-sm h-70 w-55">
+                <div class="project-img">
+                  <img src="<%=portfolio.projectThumbnail%>" class="img-fluid rounded-top" alt="image">
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title text-warning">
+                    <%=portfolio.projectTitle%>
+                  </h5>
+                  <p class="card-text text-secondary">
+                    <%=portfolio.projectDescription%>
+                  </p>
+                  <p class="small text-muted">Python | NLP | Pandas | Scikit-learn</p>
+                </div>
+              </div>
+            </a>
+          </div>
+          <% } %>

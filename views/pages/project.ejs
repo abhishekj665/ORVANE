@@ -1,0 +1,91 @@
+<%layout("/layouts/boilerplate.ejs")-%>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/project.css" />
+
+
+    <section class="project-container">
+        <div class="project-header">
+            <img src="<%=portfolio.projectThumbnail%>" alt="Project Thumbnail"
+                class="project-image img-fluid rounded-top">
+            <div class="project-intro">
+                <h1>
+                    <%=portfolio.projectTitle%>
+                </h1>
+                <p class="category">Web Development | Full Stack</p>
+                <p class="dates">Start: Jan 15, 2024 • Deploy: Apr 05, 2024</p>
+                <a href="https://orvane-airbnb-clone.vercel.app" target="_blank" class="view-btn">View Project</a>
+            </div>
+        </div>
+
+        <div class="project-content">
+            <h2>Overview</h2>
+            <p>
+                <%=portfolio.projectDescription%>
+            </p>
+
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>Technologies Used</h3>
+                    <ul class="tags">
+                        <% if (portfolio.technologiesUsed && portfolio.technologiesUsed.length) { %>
+                            <% portfolio.technologiesUsed.forEach(tech=> { %>
+                                <li>
+                                    <%= tech %>
+                                </li>
+                                <% }) %>
+                                    <% } else { %>
+                                        <li>No technologies listed</li>
+                                        <% } %>
+                    </ul>
+                </div>
+
+
+                <div class="info-card">
+                    <h3>Team Members</h3>
+                    <ul>
+                        <% if (portfolio.employees && portfolio.employees.length) { %>
+                            <% portfolio.employees.forEach(emp=> { %>
+                                <li>
+                                    <%= emp.name %> — <%= emp.role %>
+                                </li>
+                                <% }) %>
+                                    <% } else { %>
+                                        <li>No team members listed</li>
+                                        <% } %>
+                    </ul>
+                </div>
+
+
+                <div class="info-card">
+                    <h3>Project Manager</h3>
+                    <ul>
+                        <% if (portfolio.managers && portfolio.managers.length) { %>
+                            <% portfolio.managers.forEach(manager=> { %>
+                                <li>
+                                    <%= manager.name %> — <%= manager.position %>
+                                </li>
+                                <% }) %>
+                                    <% } else { %>
+                                        <li>No manager assigned</li>
+                                        <% } %>
+                    </ul>
+                </div>
+
+
+                <div class="info-card">
+                    <h3>Client</h3>
+                    <p>
+                        <%= portfolio.clientName ? portfolio.clientName : "No client specified" %>
+                    </p>
+                </div>
+
+
+                <div class="feedback-section">
+                    <h2>Client Feedback</h2>
+                    <p>
+                        <%= portfolio.feedback ? portfolio.feedback : "No feedback available" %>
+                    </p>
+                </div>
+
+            </div>
+    </section>

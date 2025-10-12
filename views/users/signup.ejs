@@ -1,27 +1,28 @@
 <% layout("/layouts/boilerplate.ejs") -%>
 
-<div class="row mt-3">
-    <h3 class="col-6 offset-2">Sign Up to Orvane</h3>
-    <div class="col-4 offset-2 mt-3">
-        <form method="POST" action="/orvane/signup" class="needs-validation" novalidate>
-            <div class="mb-3">
-                <label for="username" class="form-label">Username</label>
-                <input name="username" placeholder="Add a username" type="text" class="form-control" id="username" required>
-                <div class="invalid-feedback">enter valid username</div>
-            </div>
-            <div class="mb-3">
-                <label for="email" class="form-label">Email</label>
-                <input name="email" placeholder="Add Email" type="email" class="form-control" id="email" required>
-                <div class="invalid-feedback">enter valid email</div>
-            </div>
-            <div class="mb-3">
-                <label for="password" class="form-label">Password</label>
-                <input name="password" placeholder="Enter a Password" type="password" class="form-control" id="password" required>
-                <div class="invalid-feedback">enter valid password</div>
-            </div>
-            <button class="btn btn-success mb-3 mt-2">SignUp</button>
-        </form>
-        <div ><a href="/orvane/log-in" class="login">Already have an account</a></div>
+    <div class="row mt-3">
+        <h3 class="col-6 offset-2">Sign Up to Orvane</h3>
+        <div class="col-4 offset-2 mt-3">
+            <form method="POST" action="/orvane/signup" class="needs-validation" novalidate>
+                <div class="mb-3">
+                    <label for="username" class="form-label">Username</label>
+                    <input name="username" placeholder="Add a username" type="text" class="form-control" id="username"
+                        required>
+                    <div class="invalid-feedback">enter valid username</div>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input name="email" placeholder="Add Email" type="email" class="form-control" id="email" required>
+                    <div class="invalid-feedback">enter valid email</div>
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label">Password</label>
+                    <input name="password" placeholder="Enter a Password" type="password" class="form-control"
+                        id="password" required>
+                    <div class="invalid-feedback">enter valid password</div>
+                </div>
+                <button class="btn btn-success mb-3 mt-2">SignUp</button>
+            </form>
+            <div><a href="/orvane/log-in" class="login">Already have an account</a></div>
+        </div>
     </div>
-</div>
-

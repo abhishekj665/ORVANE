@@ -1,25 +1,26 @@
 <% layout("/layouts/boilerplate.ejs") -%>
 
-<div class="process">
+  <div class="process">
     <p id="head">From Zoom</p>
     <p id="head-tag">... to vroom... to "boom"</p>
-</div>
-<div class="process-desc">
-    <p>As your creative co-pilots, weʼre with you every step of the way, from initial brainstorming to launch day. Our expert guidance ensures a seamless journey, delivering a custom web development that captivates, engages, and drives results.</p>
-</div>
+  </div>
+  <div class="process-desc">
+    <p>As your creative co-pilots, weʼre with you every step of the way, from initial brainstorming to launch day. Our
+      expert guidance ensures a seamless journey, delivering a custom web development that captivates, engages, and
+      drives results.</p>
+  </div>
 
-<div class="process-video" id="process-video" style="height: 200px;width: 200px;">
-     <p style="font-size: 20px;padding-top: 2rem;">Play Video</p> 
-     <video id="video" src="https://youtu.be/xrSZLa14haA?si=THJx2uyh_iU0Ldxp" autoplay></video> 
-</div>
+  <div class="process-video" id="process-video" style="height: 200px;width: 200px;">
+    <p style="font-size: 20px;padding-top: 2rem;">Play Video</p>
+    <video id="video" src="https://youtu.be/xrSZLa14haA?si=THJx2uyh_iU0Ldxp" autoplay></video>
+  </div>
 
-<script>
+  <script>
     const video = document.getElementById('video');
-  const container = document.getElementsById('process-video');
+    const container = document.getElementsById('process-video');
 
-  container.addEventListener('mouseenter', () => {
-    video.play();
-  });
+    container.addEventListener('mouseenter', () => {
+      video.play();
+    });
 
-</script>
-
+  </script>

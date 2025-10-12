@@ -12,4 +12,8 @@ router.get("/our-process", (req, res) => {
   res.render("abouts/process.ejs");
 })
 
+router.get("/careers", (req, res) => {
+  res.render("abouts/career.ejs");
+})
+
 module.exports = router;

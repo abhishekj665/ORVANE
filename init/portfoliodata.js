@@ -1,51 +1,185 @@
-const dummyPortfolio = [
-   {
-        name: "John Doe",
-        role: "Full Stack Developer",
-        bio: "Passionate developer with 5 years of experience building scalable web applications using Node.js, React, and MongoDB.",
-        social_links: {
-            linked_in: "https://linkedin.com/in/johndoe",
-            twitter: "https://twitter.com/johndoe",
-            git_hub: "https://github.com/johndoe"
-        },
-        profile : "https://images.unsplash.com/photo-1600180758890-6b94519a8ba6?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-    },
-    {
-        name: "Jane Smith",
-        role: "UI/UX Designer",
-        bio: "Creative designer focused on crafting intuitive and beautiful interfaces for web and mobile applications.",
-        social_links: {
-            linked_in: "https://linkedin.com/in/janesmith",
-            twitter: "https://twitter.com/janesmith",
-            git_hub: "https://github.com/janesmith"
-        },
-        profile : "https://plus.unsplash.com/premium_photo-1688350808212-4e6908a03925?q=80&w=1169&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-        
-    },
-    {
-        name: "Michael Lee",
-        role: "Digital Marketing Specialist",
-        bio: "Experienced in SEO, social media campaigns, and content marketing strategies to drive engagement and growth.",
-        social_links: {
-            linked_in: "https://linkedin.com/in/michaellee",
-            twitter: "https://twitter.com/michaellee",
-            git_hub: "https://github.com/michaellee"
-        },
-        profile : "https://plus.unsplash.com/premium_photo-1682094917716-03b5d476060a?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-        
-    },
-    {
-        name: "Sara Johnson",
-        role: "Data Scientist",
-        bio: "Expert in machine learning and data analysis, transforming raw data into actionable insights for businesses.",
-        social_links: {
-            linked_in: "https://linkedin.com/in/sarajohnson",
-            twitter: "https://twitter.com/sarajohnson",
-            git_hub: "https://github.com/sarajohnson"
-        },
-        profile : "https://plus.unsplash.com/premium_photo-1661726660137-61b182d93809?q=80&w=1332&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-        
-    }
+const portfolioData = [
+  {
+    projectTitle: "Airbnb Clone Platform",
+    projectDescription:
+      "A full-stack web application replicating Airbnb’s core features — property listings, booking, and secure payments — built with a responsive UI and authentication flow.",
+    projectCategory: "Web Development",
+    technologiesUsed: ["React", "Node.js", "Express", "MongoDB", "TailwindCSS"],
+    startDate: new Date("2024-01-15"),
+    deployDate: new Date("2024-04-05"),
+    projectURL: "https://orvane-airbnb-clone.vercel.app",
+    githubRepo: "https://github.com/orvane/airbnb-clone",
+    employees: [
+      { name: "Abhishek Jevene", role: "Full Stack Developer" },
+      { name: "Riya Patel", role: "Frontend Developer" },
+      { name: "Vivek Sharma", role: "Backend Developer" },
+    ],
+    managers: [{ name: "Anjali Mehta", position: "Project Manager" }],
+    projectStatus: "Deployed",
+    projectThumbnail: "https://images.unsplash.com/photo-1657256031855-68029292ff34?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    clientName: "Orvane Digital Labs",
+    feedback: "Delivered before deadline with full feature parity and clean UI.",
+  },
+  {
+    projectTitle: "Netflix Movie Recommendation System",
+    projectDescription:
+      "A machine learning–based recommendation engine that suggests movies using cosine similarity and TF-IDF analysis of user preferences.",
+    projectCategory: "Machine Learning",
+    technologiesUsed: ["Python", "Pandas", "Scikit-learn", "Flask", "HTML/CSS"],
+    startDate: new Date("2024-02-01"),
+    deployDate: new Date("2024-03-15"),
+    projectURL: "https://orvane-netflix-recommender.vercel.app",
+    githubRepo: "https://github.com/orvane/netflix-recommendation",
+    employees: [
+      { name: "Abhishek Jevene", role: "Data Scientist" },
+      { name: "Simran Kaur", role: "ML Engineer" },
+    ],
+    managers: [{ name: "Rohan Kapoor", position: "Tech Lead" }],
+    projectStatus: "Completed",
+    projectThumbnail: "https://images.unsplash.com/photo-1626814026160-2237a95fc5a0?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    clientName: "Internal Showcase",
+    feedback: "Achieved 96% accuracy and scalable recommendation logic.",
+  },
+  {
+    projectTitle: "Restaurant Recommendation System",
+    projectDescription:
+      "A restaurant recommender using content-based filtering and dynamic user profiling to suggest eateries matching user taste preferences.",
+    projectCategory: "Machine Learning / Web",
+    technologiesUsed: ["Python", "Flask", "HTML", "CSS", "Pandas"],
+    startDate: new Date("2024-03-10"),
+    deployDate: new Date("2024-04-28"),
+    projectURL: "gvuciiy",
+    githubRepo: "https://github.com/orvane/restaurant-recommendation",
+    employees: [
+      { name: "Abhishek Jevene", role: "Machine Learning Engineer" },
+      { name: "Nisha Gupta", role: "Frontend Developer" },
+    ],
+    managers: [{ name: "Priya Nair", position: "Project Coordinator" }],
+    projectStatus: "Deployed",
+    projectThumbnail: "https://plus.unsplash.com/premium_photo-1670984939096-f3cfd48c7408?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=687",
+    clientName: "Co9lfico Tech",
+    feedback: "97% accuracy and praised for its intuitive user interface.",
+  },
+  {
+    projectTitle: "E-Commerce Dashboard",
+    projectDescription:
+      "An analytics dashboard for sellers to monitor revenue, inventory, and customer activity using dynamic data visualization.",
+    projectCategory: "Web App / Analytics",
+    technologiesUsed: ["React", "Redux", "Node.js", "Chart.js", "MongoDB"],
+    startDate: new Date("2024-05-01"),
+    deployDate: new Date("2024-07-01"),
+    projectURL: "https://orvane-ecommerce-dashboard.vercel.app",
+    githubRepo: "https://github.com/orvane/ecommerce-dashboard",
+    employees: [
+      { name: "Abhishek Jevene", role: "Frontend Lead" },
+      { name: "Rajesh Kumar", role: "Backend Developer" },
+    ],
+    managers: [{ name: "Anjali Mehta", position: "Project Manager" }],
+    projectStatus: "Deployed",
+    projectThumbnail: "https://images.unsplash.com/photo-1726056652752-58303aafa0c1?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=687",
+    clientName: "ShopSphere Pvt. Ltd.",
+    feedback: "Helped reduce manual reporting time by 60%.",
+  },
+  {
+    projectTitle: "AI Resume Screening Tool",
+    projectDescription:
+      "Built a natural language processing model to automate resume screening and shortlist candidates based on skill relevance.",
+    projectCategory: "Artificial Intelligence",
+    technologiesUsed: ["Python", "NLP", "Transformers", "FastAPI", "Pandas"],
+    startDate: new Date("2024-06-10"),
+    deployDate: new Date("2024-08-05"),
+    projectURL: "https://orvane-ai-resume.vercel.app",
+    githubRepo: "https://github.com/orvane/ai-resume-screener",
+    employees: [
+      { name: "Abhishek Jevene", role: "Data Scientist" },
+      { name: "Ravi Verma", role: "Backend Developer" },
+    ],
+    managers: [{ name: "Rohan Kapoor", position: "AI Project Manager" }],
+    projectStatus: "Completed",
+    projectThumbnail: "https://images.unsplash.com/photo-1706466614967-f4f14a3d9d08?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=880",
+    clientName: "TalentPro HR",
+    feedback: "Reduced initial screening workload by 70%.",
+  },
+  {
+    projectTitle: "Portfolio Management Web App",
+    projectDescription:
+      "A personal portfolio management system allowing users to create, update, and showcase projects with live analytics.",
+    projectCategory: "Full Stack Web",
+    technologiesUsed: ["MERN Stack", "Cloudinary", "JWT", "Bootstrap"],
+    startDate: new Date("2024-04-10"),
+    deployDate: new Date("2024-06-25"),
+    projectURL: "https://orvane-portfolio.vercel.app",
+    githubRepo: "https://github.com/orvane/portfolio-app",
+    employees: [
+      { name: "Abhishek Jevene", role: "Full Stack Developer" },
+      { name: "Sneha Rao", role: "UI Designer" },
+    ],
+    managers: [{ name: "Priya Nair", position: "Project Lead" }],
+    projectStatus: "Deployed",
+    projectThumbnail: "https://images.unsplash.com/photo-1565799281033-8c551ca2138b?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1170",
+    clientName: "Orvane Team",
+    feedback: "Now used internally for showcasing all Orvane projects.",
+  },
+  {
+    projectTitle: "Weather Forecast Web App",
+    projectDescription:
+      "A dynamic weather forecasting platform that provides real-time updates and a seven-day prediction using open weather APIs.",
+    projectCategory: "Web Development",
+    technologiesUsed: ["React", "OpenWeather API", "Node.js", "CSS3"],
+    startDate: new Date("2024-02-20"),
+    deployDate: new Date("2024-03-25"),
+    projectURL: "https://orvane-weather.vercel.app",
+    githubRepo: "https://github.com/orvane/weather-app",
+    employees: [
+      { name: "Abhishek Jevene", role: "Frontend Developer" },
+      { name: "Karan Singh", role: "API Integration Engineer" },
+    ],
+    managers: [{ name: "Anjali Mehta", position: "Tech Supervisor" }],
+    projectStatus: "Completed",
+    projectThumbnail: "https://images.unsplash.com/photo-1705077296278-d82dd5c8662f?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1109",
+    clientName: "ClimateNow Initiative",
+    feedback: "Minimalist UI and accurate data fetching.",
+  },
+  {
+    projectTitle: "Loan Approval Prediction System",
+    projectDescription:
+      "Developed an ML model to predict loan approvals using historical applicant data and explainable AI techniques.",
+    projectCategory: "Machine Learning",
+    technologiesUsed: ["Python", "NumPy", "Scikit-learn", "Matplotlib", "Pandas"],
+    startDate: new Date("2024-01-05"),
+    deployDate: new Date("2024-02-10"),
+    projectURL: "https://orvane-loan-predictor.vercel.app",
+    githubRepo: "https://github.com/orvane/loan-prediction",
+    employees: [
+      { name: "Abhishek Jevene", role: "Data Analyst" },
+      { name: "Rahul Sharma", role: "Model Developer" },
+    ],
+    managers: [{ name: "Rohan Kapoor", position: "ML Project Head" }],
+    projectStatus: "Completed",
+    projectThumbnail: "https://images.unsplash.com/photo-1616803140344-6682afb13cda?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1170",
+    clientName: "FinTrust Bank",
+    feedback: "Delivered 96% accuracy with clear visualization reports.",
+  },
+  {
+    projectTitle: "Housing Price Prediction System",
+    projectDescription:
+      "A prediction model analyzing prices of Houses based on facilities and furnishments and location gives outcomes with 96% accuracy.",
+    projectCategory: "Data Science",
+    technologiesUsed: ["Python", "Matplotlib", "XGBoost", "NumPy", "Pandas"],
+    startDate: new Date("2023-12-10"),
+    deployDate: new Date("2024-02-28"),
+    projectURL: "https://orvane-paper2code.vercel.app",
+    githubRepo: "https://github.com/orvane/paper2code",
+    employees: [
+      { name: "Abhishek Jevene", role: "Data Scientist" },
+      { name: "Riya Patel", role: "Data Engineer" },
+    ],
+    managers: [{ name: "Priya Nair", position: "Project Coordinator" }],
+    projectStatus: "Completed",
+    projectThumbnail: "https://images.unsplash.com/photo-1619216083420-6e54b895f730?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    clientName: "Edutech Labs",
+    feedback: "Boosted institutional reporting efficiency by 33%.",
+  },
 ];
 
-module.exports = {portfolioData : dummyPortfolio};
+module.exports = portfolioData;

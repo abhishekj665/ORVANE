@@ -1,24 +1,26 @@
 <% layout("/layouts/boilerplate.ejs") -%>
 
-<div class="row mt-3">
-    <h3 class="col-6 offset-3">Login</h3>
-    <div class="col-4 offset-3 mt-3">
-        <form method="POST" action="/orvane/login" class="needs-validation" novalidate>
-            <div class="mb-3">
-                <label for="username" class="form-label">Username</label>
-                <input name="username" placeholder="Enter username" type="text" class="form-control" id="username" required>
-                <div class="valid-feedback">Username is valid.</div>
-                <div class="invalid-feedback">enter valid username.</div>
-            </div>
-            <div class="mb-3">
-                <label for="password" class="form-label">Password</label>
-                <input name="password" placeholder="Enter a Password" type="password" class="form-control" id="password" required>
-                <div class="valid-feedback">Password is valid.</div>
-                <div class="invalid-feedback">enter valid password.</div>
-            </div>
-            <button class="btn btn-success">LogIn</button>
-        </form>
-        <div  style="margin-top: 2rem;"><a href="/orvane/signup" class="login">Create an account</a></div>
+    <div class="row mt-3">
+        <h3 class="col-6 offset-3">Sign in</h3>
+        <div class="col-4 offset-3 mt-3">
+            <form method="POST" action="/orvane/login" class="needs-validation" novalidate>
+                <div class="mb-3">
+                    <label for="username" class="form-label">Username</label>
+                    <input name="username" placeholder="Enter username" type="text" class="form-control" id="username"
+                        required>
+                    <div class="valid-feedback">Username is valid.</div>
+                    <div class="invalid-feedback">enter valid username.</div>
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label">Password</label>
+                    <input name="password" placeholder="Enter a Password" type="password" class="form-control"
+                        id="password" required>
+                    <div class="valid-feedback">Password is valid.</div>
+                    <div class="invalid-feedback">enter valid password.</div>
+                </div>
+                <button class="btn btn-success">Sign in</button>
+            </form>
+            <div style="margin-top: 2rem;"><a href="/orvane/signup" class="login">Create an account</a></div>
+        </div>
+
     </div>
-    
-</div>

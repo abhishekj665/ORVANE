@@ -44,8 +44,20 @@ router.get("/log-in", (req, res) => {
 
 
 router.get("/log-out", (req, res) => {
-    res.clearCookie('connect.sid')
-    res.redirect("/orvane/log-in");
+    req.logOut((err) => {
+        if(err){
+            req.flash("error", "Something went wromg");
+            res.redirect("/");
+        }
+        req.session.destroy((err) => {
+            if(err){
+                req.flash("error", "Something went wrong for session");
+                res.redirect("/");
+            }
+            res.clearCookie('connect.sid');
+            res.redirect("/orvane/log-in");
+        })
+    })
 })
 
 module.exports = router;

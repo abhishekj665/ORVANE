@@ -1,35 +1,92 @@
+const express = require("express");
 const mongoose = require("mongoose");
+const Schema = mongoose.Schema;
 
-const portfolioSchema = new mongoose.Schema({
-    name : {
-        type : String,
-        require : true
+
+
+const portfolioSchema = new Schema({
+  projectTitle: {
+    type: String,
+    required: true,
+    trim: true,
+  },
+  projectDescription: {
+    type: String,
+    required: true,
+  },
+  projectCategory: {
+    type: String, 
+    required: true,
+  },
+  technologiesUsed: [
+    {
+      type: String, 
     },
-    role : {
-        type : String,
-        require : true
+  ],
+  startDate: {
+    type: Date,
+    required: true,
+  },
+  deployDate: {
+    type: Date,
+    required: true,
+  },
+  projectURL: {
+    type: String, 
+    required: true,
+  },
+  githubRepo: {
+    type: String, 
+  },
+  employees: [
+    {
+      employeeId: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "User", 
+      },
+      name: {
+        type: String,
+        required: true,
+      },
+      role: {
+        type: String, 
+        required: true,
+      },
     },
-    bio : {
-        type : String,
-        require : true
+  ],
+  managers: [
+    {
+      managerId: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "User",
+      },
+      name: {
+        type: String,
+        required: true,
+      },
+      position: {
+        type: String, 
+      },
     },
-    social_links : {
-        linked_in : {
-            type : String,
-        },
-        twitter : {
-            type : String
-        },
-        git_hub : {
-            type : String
-        }
-    },
-    profile : {
-            type : String,
-            require : true
-    }
+  ],
+  projectStatus: {
+    type: String,
+    enum: ["In Progress", "Completed", "Deployed", "Archived"],
+    default: "Completed",
+  },
+  projectThumbnail: {
+    type: String, 
+  },
+  clientName: {
+    type: String, 
+  },
+  feedback: {
+    type: String, 
+  },
+  createdAt: {
+    type: Date,
+    default: Date.now,
+  },
 });
 
-const Portfolio = mongoose.model("Portfolio", portfolioSchema );
-
-module.exports = Portfolio;
+module.exports = mongoose.model("Portfolio", portfolioSchema);
