@@ -6,11 +6,13 @@ const wrapAsync = require("../utils/wrapAsync");
 const ExpressError = require("../utils/ExpressError");
 const passport = require("passport");
 
+const {saveRedirectUrl} = require("../middlewares");
+
 router.get("/signup", (req, res) => {
   res.render("users/signup.ejs");
 })
 
-router.post("/signup", async(req, res) => {
+router.post("/signup",saveRedirectUrl, async(req, res) => {
     try{
         let {username, email, password} = req.body;
         const newUser = new User({email, username});
@@ -19,18 +21,19 @@ router.post("/signup", async(req, res) => {
         req.login(registeredUser, err => {
             if (err) return next(err);
             req.flash("success", `Welcome to Orvane Digitals ${username}`);
-            res.redirect("/orvane");
+            res.redirect(res.locals.redirectUrl);
         });
     }catch(e){
         req.flash("error", "user already existed");
-        res.redirect("/orvane/signup");
+        res.redirect("/user/signup");
     }
 })
 
-router.post("/login", passport.authenticate("local", {failureRedirect : "/orvane/log-in", failureFlash : true}), async (req, res) => {
+router.post("/login",saveRedirectUrl, passport.authenticate("local", {failureRedirect : "/user/log-in", failureFlash : true}), async (req, res) => {
     let {username} = req.body;
     req.flash("success", `Welcome back to Orvane Digitals ${username}`);
-    res.redirect("/orvane");
+    let redirectUrl = res.locals.redirectUrl || "/orvane";
+    res.redirect(redirectUrl);
 })
 
 // router.get("/", (req, res) => {

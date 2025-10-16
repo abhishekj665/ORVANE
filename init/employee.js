@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const Portfolio = require("../models/employee.js");
+const Employee = require("../models/employee.js");
 const {employeeData} = require("./employeedata.js")
 
 main()
@@ -12,8 +12,8 @@ async function main() {
 
 
 const data  = async() => {
-    await Portfolio.deleteMany({});
-    await Portfolio.insertMany(employeeData);
+    await Employee.deleteMany({});
+    await Employee.insertMany(employeeData);
     console.log("Data was intialized");
 }
 

@@ -8,12 +8,12 @@
         A showcase of our real-world projects — blending design, data, and development into digital excellence.
       </p>
 
-      <div class="row g-4">
+      <div class="row  row-cols-sm-2 row-cols-md-3 g-4">
         <!-- Project 1 -->
         <% for(let portfolio of Portfolios) { %>
-          <div class="col-md-4 mb-5">
-            <a href="/orvane/portfolio/<%= portfolio._id %>">
-              <div class="card project-card border-0 shadow-sm h-70 w-55">
+          <div class="col-md-4  row-cols-sm-2 row-cols-md-3 mb-5">
+            <a href="/portfolio/<%= portfolio._id%>">
+              <div class="card project-card border-0 shadow-sm" style="width: 20vw;height: 50vh;">
                 <div class="project-img">
                   <img src="<%=portfolio.projectThumbnail%>" class="img-fluid rounded-top" alt="image">
                 </div>
@@ -22,9 +22,8 @@
                     <%=portfolio.projectTitle%>
                   </h5>
                   <p class="card-text text-secondary">
-                    <%=portfolio.projectDescription%>
+                    <%=portfolio.projectCategory%>
                   </p>
-                  <p class="small text-muted">Python | NLP | Pandas | Scikit-learn</p>
                 </div>
               </div>
             </a>

@@ -4,19 +4,20 @@ const mongoose = require("mongoose");
 const path = require("path");
 const ejsMate = require("ejs-mate");
 const Service = require("./models/service.js");
-const Portfolio = require("./models/employee.js");
 const passport = require("passport");
 const LocalStrategy = require("passport-local");
 const User = require("./models/user.js");
 const wrapAsync = require("./utils/wrapAsync.js");
 const ExpressError = require("./utils/ExpressError.js");
 const flash = require("connect-flash");
+const Employee = require("./models/employee.js");
 
 const session = require("express-session");
 
 const aboutRouter = require("./routes/about.js");
 const orvaneRouter = require("./routes/orvane.js");
 const userRouter = require("./routes/user.js");
+const portfolioRouter = require("./routes/portfolio.js");
 
 
 
@@ -69,14 +70,15 @@ app.use((req, res, next) => {
 
 app.get("/orvane", async (req, res) => {
     let allServices = await Service.find({});
-    let allPortfolio = await Portfolio.find({});
-    res.render("pages/home.ejs", {allServices, allPortfolio});
+    let allEmployee = await Employee.find({});
+    res.render("pages/home.ejs", {allServices, allEmployee});
 })
 
 
 app.use("/about", aboutRouter);
 app.use("/orvane",orvaneRouter);
-app.use("/orvane",userRouter);
+app.use("/user",userRouter);
+app.use("/portfolio",portfolioRouter );
 
 
 app.use((req, res, next) => {

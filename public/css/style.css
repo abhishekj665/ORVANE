@@ -42,6 +42,10 @@ body {
   color: #FFD43B;
 }
 
+#home-info{
+  display: flex !important;
+}
+
 .navbar-nav {
   display: flex;
   gap: 20px;
@@ -149,6 +153,11 @@ body {
   background: linear-gradient(to right,#fcb900,#00d084);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+.service-heading{
+  margin-left: 2rem !important;
+  margin-top: 2rem;
 }
 
 .portfolio-heading{
@@ -604,3 +613,84 @@ a{
 #sign-a:hover{
   text-decoration: underline !important;
 }
+
+
+@media (max-width: 767.98px) {
+    body {
+        line-height: 1.45;
+    }
+}
+
+@media (max-width: 991.98px) {
+    .cmn-hero-banner.about-us .statistics {
+        margin-bottom: 32px;
+        
+    }
+}
+
+.cmn-hero-banner.about-us .statistics .h2 {
+    margin-bottom: 4px;
+}
+
+.cmn-hero-banner.about-us .statistics .body-large {
+    color: #b7b8c0;
+}
+
+.font-stat{
+  font-size: 40px;
+}
+
+#stat{
+  justify-content: center !important;
+  text-align: center;
+}
+
+.mx-auto{
+  margin-left: 5rem !important;
+}
+
+
+
+@media(max-width:575px){
+  #service-info{
+    display: block !important;
+  }
+  #service-btn{
+    display: block !important;
+  }
+}
+
+#row {
+    --bs-gutter-x: 48px;
+    --bs-gutter-y: 0;
+    display: flex;
+
+    flex-wrap: wrap;
+    margin-top: calc(-1 * var(--bs-gutter-y));
+    margin-right: calc(-.5 * var(--bs-gutter-x));
+    margin-left: calc(-.5 * var(--bs-gutter-x));
+}
+
+#open-positions{
+ background: linear-gradient(to right, rgb(231, 94, 94), rgb(221, 221, 75), #439db9);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  text-decoration: underline !important;
+  
+}
+
+.opportunities-section .opportunities-list {
+    padding: 40px 0;
+    color: rgb(80, 110, 222);
+    opacity: 1;
+    transition: 0.2s ease;
+}
+
+.btn-link-white:hover{
+  color: rgb(203, 228, 153) !important;
+}
+
+
+

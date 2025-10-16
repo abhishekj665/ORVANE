@@ -7,13 +7,13 @@
     <div class="line2">
       <h1>That Impowers Your Business</h1>
     </div>
-    <div class="service-info mt-2">
-      <p>Web-Development &nbsp; </p>
+    <div class="service-info mt-2 ">
+      <p>&nbsp;Web-Development &nbsp; </p>
       <p>&nbsp;Web-Applications &nbsp; </p>
       <p>&nbsp;UI-UX Design &nbsp; </p>
-      <p>&nbsp;SEO-Maintainance</p>
+      <p>&nbsp;SEO - Maintainance&nbsp;</p>
     </div>
-    <div class="description-btn mt-2">
+    <div class="description-btn mt-2 ">
       <a href="/orvane/services" style="text-decoration: none;"><button class="service-btn">Our
           Services</button>&nbsp;</a>
       <a href="/orvane/contact" style="text-decoration: none;color:white;"><button class="contact-btn"
@@ -21,9 +21,9 @@
     </div>
   </div>
   <div>
-    <h2 class="service-heading mt-2">Service</h2>
+    <h2 class="service-heading">Service</h2>
     <div class="services-preview mt-2">
-      <div class="row row-cols-lg-4 row-cols-md-3 row-cols-sm-2">
+      <div class="row row-cols-lg-4 row-cols-md-2 row-cols-sm-2 g-3">
         <% for(let service of allServices) { %>
           <a href="/services/<%=service._id%>" class="service-link">
             <div class="card col service-card text-center">
@@ -41,17 +41,17 @@
   </div>
   <h2 class="portfolio-heading">Ambassador</h2>
   <div class="row row-cols-lg-4 row-cols-md-3 row-cols-sm-2 g-3 mb-5 mt-3">
-    <% for(let portfolio of allPortfolio) { %>
+    <% for(let employee of allEmployee) { %>
       <div class="col">
-        <a href="/services/<%=portfolio._id%>" class="portfolio-link text-decoration-none">
+        <a href="/services/<%=employee._id%>" class="portfolio-link text-decoration-none">
           <div class="card h-100 portfolio-card text-center">
             <div class="card-body">
-              <img src="<%=portfolio.profile%>" class="portfolio-img" alt="portfolio-image">
+              <img src="<%=employee.profile%>" class="portfolio-img" alt="portfolio-image">
               <h5 class="card-title mt-3">
-                <%=portfolio.name%>
+                <%=employee.name%>
               </h5>
               <p class="card-text">
-                <%=portfolio.role%>
+                <%=employee.role%>
               </p>
             </div>
           </div>
