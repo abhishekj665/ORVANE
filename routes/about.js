@@ -14,7 +14,7 @@ router.get("/our-process", (req, res) => {
   res.render("abouts/process.ejs");
 })
 
-router.get("/careers", (req, res) => {
+router.get("/careers",isLoggedIn, (req, res) => {
   res.render("abouts/career.ejs");
 })
 

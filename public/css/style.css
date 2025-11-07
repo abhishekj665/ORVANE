@@ -11,6 +11,11 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  
+}
+
+.animation{
+animation: fadeInUp 1.2s ease !important;
 }
 
 @media (max-width : 350px) {
@@ -197,6 +202,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  animation: fadeInUp 1.2s ease;
 }
 
 .f-info {
@@ -345,7 +351,7 @@ body {
 
 
 .head-tag{
-  font-size: 5vw;
+  font-size: 5vh;
   font-weight: 400;
    background: linear-gradient(to right, blue, aqua);
     background-clip: text;
@@ -436,6 +442,12 @@ hr {
   height: 10px;
   margin-top: -3rem;
   margin-left: 2rem;
+}
+
+@media(max-width:400px){
+  .head-tag{
+    font-size: 5vw;
+  }
 }
 
 /* .try {
@@ -736,4 +748,10 @@ a{
   .form-control{
   width: auto !important;
 }
+}
+
+
+.container-md, .container-sm, .container-xl, .container-xxl{
+  padding-left: 0 !important;
+  padding-right: 0 !important;
 }

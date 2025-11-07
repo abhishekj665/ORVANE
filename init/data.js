@@ -22,7 +22,19 @@ const Services = [
     description: "Boost your brand visibility and drive sales through effective digital marketing strategies.",
     image: "https://static.vecteezy.com/system/resources/thumbnails/026/268/046/small_2x/digital-marketing-commerce-online-sale-concept-promotion-of-products-or-services-through-digital-channels-search-engine-social-media-email-website-digital-marketing-strategies-and-goals-seo-ppc-photo.jpg",
     price_or_plan: "Starting from $299"
-  }
+  },
+  {
+    title: "Android App Development",
+    description: "Design and build modern Android applications with intuitive UI, scalable architecture, and smooth performance using Kotlin and Flutter.",
+    image: "/images/android-app.jpg",
+    price_on_plan: "₹25,000 - ₹90,000"
+  },
+  {
+    title: "Data Analytics",
+    description: "Convert complex datasets into visually engaging dashboards and reports using Tableau, Power BI, or Python libraries.",
+    image: "/images/data-visualization.jpg",
+    price_on_plan: "₹15,000 - ₹70,000"
+  },
 ]
 
 

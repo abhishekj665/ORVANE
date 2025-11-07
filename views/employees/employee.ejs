@@ -1,0 +1,33 @@
+<%layout("/layouts/boilerplate.ejs")-%>
+<section class="showcase-section animation">
+  <h2 class="showcase-title">Meet Our Team</h2>
+  <p class="showcase-subtitle">The brains and hearts behind Orvane Digital</p>
+
+  <div class="showcase-grid">
+    <% allEmployee.forEach(employee => { %>
+      <div class="showcase-card">
+        <div class="card-image">
+          <img src="<%= employee.profile%>" alt="<%= employee.name %>">
+        </div>
+        <div class="card-overlay">
+          <h3 class="name"><%= employee.name %></h3>
+          <p class="role"><%= employee.role %></p>
+          <p class="bio"><%= employee.bio %></p>
+            <div class="social-links">
+            <% if (employee.social_links.linked_in) { %>
+              <a href="<%= employee.social_links.linked_in %>" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <% } %>
+            <% if (employee.social_links.git_hub) { %>
+              <a href="<%= employee.social_links.git_hub %>" target="_blank"><i class="fab fa-github"></i></a>
+            <% } %>
+            <% if (employee.social_links.twitter) { %>
+              <a href="<%= employee.social_links.twitter %>" target="_blank"><i class="fab fa-twitter"></i></a>
+            <% } %>
+            </div>
+        </div>
+      </div>
+    <% }) %>
+  </div>
+</section>
+
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>

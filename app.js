@@ -18,6 +18,8 @@ const aboutRouter = require("./routes/about.js");
 const orvaneRouter = require("./routes/orvane.js");
 const userRouter = require("./routes/user.js");
 const portfolioRouter = require("./routes/portfolio.js");
+const employeeRouter = require("./routes/employee.js");
+const serviceRouter = require("./routes/service.js");
 
 
 
@@ -68,17 +70,15 @@ app.use((req, res, next) => {
 
 
 
-app.get("/orvane", async (req, res) => {
-    let allServices = await Service.find({});
-    let allEmployee = await Employee.find({});
-    res.render("pages/home.ejs", {allServices, allEmployee});
-})
+
 
 
 app.use("/about", aboutRouter);
 app.use("/orvane",orvaneRouter);
 app.use("/user",userRouter);
 app.use("/portfolio",portfolioRouter );
+app.use("/employee", employeeRouter);
+app.use("/service", serviceRouter);
 
 
 app.use((req, res, next) => {

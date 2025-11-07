@@ -1,0 +1,49 @@
+<% layout("/layouts/boilerplate.ejs") -%>
+
+<div class="row">
+        <div class="col-8 offset-2">
+            <br>
+            <h2>POST YOUR PROJECT -</h2>
+            <br>
+    <form method="POST" action="/service/post-project" novalidate class="needs-validation" >
+        <div class="mb-3">
+            <label for="title" class="form-label">Title</label>
+            <input name="project[title]" placeholder="Add a Title of Project" type="text" class="form-control" required>
+            <div class="valid-feedback">Title Looks Good.</div>
+        </div>
+
+        <div class="mb-3">
+            <label for="project_domain" class="form-label">Domain</label>
+            <input name="project[project_domain]" value="<%-service.title%>" type="text" class="form-control" readonly required> 
+            <div class="valid-feedback">Project Domain</div>
+        </div>
+
+        <div class="mb-3">
+            <label for="project-requirment" class="form-label">Requirments</label>
+            <textarea name="project[project_requirment]" placeholder="Enter Your Requirments" type="text" class="form-control" required></textarea>
+            <div class="invalid-feedback">Please Enter Your Requirments</div>
+        </div>
+
+
+        <div class="mb-3">
+            <label for="project[end_date]" class="form-label">Project Estimated Deadline</label>
+            <input name="project[end_date]" placeholder="Enter Date" type="date" class="form-control" required></input>
+            <div class="invalid-feedback">Please Enter A Deadline Date</div>
+        </div>
+        
+        
+        <div class="row">
+            <div class="mb-3 col-md-4">
+                <label for="project[price]" class="form-label">Price (In Dollars)</label>
+                <input name="project[price]" placeholder="Enter Price in dollar" type="number" class="form-control" value="2000" min="2000" required>
+                <div class="invalid-feedback" style="color: rgb(218, 90, 90);font-family: Arial">Enter a Valid Price</div>
+                <div class="valid-feedback" style="color: rgb(92, 208, 92);">Note - Project Price is Uncertain.</div>
+            </div>
+        </div>
+        <button class="btn btn-dark add-btn">Add</button>
+        <br><br>
+    </form>
+    </div>
+</div>
+
+

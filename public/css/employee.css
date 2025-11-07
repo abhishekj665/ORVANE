@@ -1,0 +1,164 @@
+body {
+  font-family: "Poppins", sans-serif;
+
+}
+
+.showcase-section {
+  text-align: center;
+  padding: 5rem 2rem;
+  background: linear-gradient(145deg, #ffffff);
+}
+
+.showcase-title {
+  font-size: 2.4rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #1a1a1a;
+}
+
+.showcase-subtitle {
+  color: #666;
+  font-size: 1rem;
+  margin-bottom: 3rem;
+}
+
+.showcase-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.showcase-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1.2rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.showcase-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.card-image img {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.showcase-card:hover img {
+  transform: scale(1.1);
+  filter: brightness(70%);
+}
+
+.card-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1.8rem;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(6px);
+  transform: translateY(100%);
+  transition: transform 0.4s ease;
+}
+
+.showcase-card:hover .card-overlay {
+  transform: translateY(0);
+}
+
+.name {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 0.2rem;
+  color: #222;
+}
+
+.role {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #0077ff;
+  margin-bottom: 0.8rem;
+}
+
+.bio {
+  font-size: 0.9rem;
+  color: #444;
+  margin-bottom: 1rem;
+}
+
+.social-links a {
+  color: #0077ff;
+  margin: 0 0.5rem;
+  font-size: 1.2rem;
+  transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+  color: #005ad3;
+}
+
+/* Responsive tweaks */
+@media (max-width: 600px) {
+  .card-overlay {
+    position: relative;
+    transform: translateY(0);
+    background: #fff;
+  }
+  .card-image img {
+    height: 250px;
+  }
+}
+
+
+.showcase-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1.2rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  z-index: 0;
+}
+
+.card-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1.8rem;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(6px);
+  transform: translateY(100%);
+  transition: transform 0.4s ease;
+  z-index: 2; /* ensure it’s above image */
+}
+
+.card-image img {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+  z-index: 1;
+  position: relative;
+}
+
+.social-links a {
+  color: #0077ff;
+  margin: 0 0.5rem;
+  font-size: 1.4rem;
+  transition: color 0.3s ease;
+  position: relative;
+  z-index: 3; /* ensures links are clickable */
+}
+
+@media (max-width:330px) {
+    .showcase-card{
+        margin-right: 2rem !important;
+    }
+}

@@ -1,6 +1,8 @@
 <%layout("/layouts/boilerplate.ejs")-%>
 
-  <div class="description mt-5">
+
+
+  <div class="description mt-5" style="margin-bottom: 10vh;">
     <div class="line1">
       <h1>Building Digital Solutions</h1>
     </div>
@@ -14,50 +16,48 @@
       <p>&nbsp;SEO - Maintainance&nbsp;</p>
     </div>
     <div class="description-btn mt-2 ">
-      <a href="/orvane/services" style="text-decoration: none;"><button class="service-btn">Our
+      <a href="/service" style="text-decoration: none;"><button class="service-btn">Our
           Services</button>&nbsp;</a>
       <a href="/orvane/contact" style="text-decoration: none;color:white;"><button class="contact-btn"
           style="margin-left: 1rem;">Contact Us</button></a>
     </div>
   </div>
-  <div>
-    <h2 class="service-heading">Services - </h2>
-    <div class="services-preview mt-2">
-      <div class="row row-cols-lg-4 row-cols-md-2 row-cols-sm-2 g-3">
-        <% for(let service of allServices) { %>
-          <a href="/services/<%=service._id%>" class="service-link">
-            <div class="card col service-card text-center">
-              <div class="card-body">
-                <img src="<%=service.image%>" class="service-img" alt="service-image">
-                <p class="card-text card-title mt-3">
-                  <%=service.title%><br>
-                </p>
-              </div>
-            </div>
-          </a>
-          <% } %>
-      </div>
-    </div>
-  </div>
-  <h2 class="portfolio-heading">Ambassador - </h2>
-  <div class="row row-cols-lg-4 row-cols-md-3 row-cols-sm-2 g-3 mb-5 mt-3">
-    <% for(let employee of allEmployee) { %>
-      <div class="col">
-        <a href="/services/<%=employee._id%>" class="portfolio-link text-decoration-none">
-          <div class="card h-100 portfolio-card text-center">
-            <div class="card-body">
-              <img src="<%=employee.profile%>" class="portfolio-img" alt="portfolio-image">
-              <h5 class="card-title mt-3">
-                <%=employee.name%>
-              </h5>
-              <p class="card-text">
-                <%=employee.role%>
-              </p>
-            </div>
-          </div>
-        </a>
-      </div>
-      <% } %>
-  </div>
+ 
 
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Orvane Digitals | Transforming Vision into Innovation</title>
+  <link rel="stylesheet" href="/css/home.css" />
+</head>
+<body>
+
+
+  <!-- Hero Section -->
+  <div>
+    <header class="hero" style="margin-bottom: 10vh;">
+    <div class="overlay"></div>
+    <div class="hero-text " style="font-weight: 500px;">
+      <h1>We Create Digital Experiences That Inspire</h1>
+      <p>From strategy to execution, Orvane Digitals brings ideas to life with technology, design, and vision.</p>
+      <button class="contact-btn"><a href="/service" style="color: white;">Our Work</button></a></button>
+    </div>
+  </header>
+
+  <!-- Upgrade Your Career Section -->
+  <section class="career" style="margin-bottom: 10vh;">
+    <div class="container">
+      <h2>Upgrade Your Career With Orvane</h2>
+      <p>
+        At Orvane Digitals, growth is not optional — it’s built into our DNA.  
+        We believe in empowering creative minds to experiment, build, and lead with purpose.  
+        Join a team that values curiosity as much as skill, and innovation as much as stability.
+      </p>
+      <button class="contact-btn"><a href="/about/careers" style="color: white;">Join Our Team</a></button>
+    </div>
+  </section>
+
+  
   </div>
