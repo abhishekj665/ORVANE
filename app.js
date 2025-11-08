@@ -28,6 +28,7 @@ const userRouter = require("./routes/user.js");
 const portfolioRouter = require("./routes/portfolio.js");
 const employeeRouter = require("./routes/employee.js");
 const serviceRouter = require("./routes/service.js");
+const serverless = require("serverless-http");
 
 
 const db_URL = process.env.ATLAS_URL;
@@ -106,15 +107,9 @@ app.use("/portfolio",portfolioRouter );
 app.use("/employee", employeeRouter);
 app.use("/service", serviceRouter);
 
-app.get("", (req, res) => {
+app.get("/", (req, res) => {
   res.render("pages/home.ejs");
-})
-
-
-
-
-
-
+});
 
 app.use((req, res, next) => {
   next(new ExpressError(404, "Page Not Found"));
@@ -128,3 +123,6 @@ app.use((err, req, res, next) => {
 app.listen(8080, () => {
     console.log("Listening Successfuly");
 })
+
+module.exports = app;
+module.exports.handler = serverless(app);
