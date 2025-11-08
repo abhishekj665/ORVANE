@@ -51,3 +51,50 @@ module.exports.logout =  (req, res) => {
         })
     })
 }
+
+module.exports.profile =  async(req, res) => {
+  try{
+    let {id} = req.params;
+    let userprofile = await User.findById(id);
+    res.render("users/profile.ejs",{userprofile});
+  }catch{
+    req.flash("error", "Something went wrong !");
+    res.redirect("/orvane");
+  }
+}
+
+module.exports.postprofilepage = async(req, res) => {
+   try{
+    let {id} = req.params;
+    let userprofile = await User.findById(id);
+    res.render("users/postprofile.ejs",{userprofile});
+  }catch{
+    req.flash("error", "Something went wrong !");
+    res.redirect("/orvane");
+  }
+}
+
+module.exports.uploadprofile = async (req, res) => {
+  try {
+    const { id } = req.params;
+    let user = await User.findById(id);
+
+    
+    for (let key in req.body) {
+      user[key] = req.body[key];
+    }
+
+    
+    if (req.file) {
+      user.resume = req.file.path; 
+      console.log("Uploaded File:", req.file);
+    }
+
+    await user.save();
+    res.redirect(`/user/profile/${id}`);
+  } catch (err) {
+    console.log(err);
+    req.flash("error", "Something went wrong");
+    res.redirect("/orvane");
+  }
+};

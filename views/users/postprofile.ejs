@@ -15,10 +15,21 @@
                     </div>
                 </div>
 
-                <form method="POST" action="/user/postprofile/<%=id%>?_method=PUT">
+                <form method="POST" action="/user/postprofile/<%=userprofile._id%>?_method=PUT" class="needs-validation" novalidate enctype="multipart/form-data">
                     <h2>Upload Your Profile</h2>
-                    <input type="text" name="fullname" placeholder="Full Name" required>
-                    <input list="professions" name="profession" placeholder="Profession" required>
+                    <div>
+                        <input type="text" name="fullname" placeholder="FullName" value="<%=userprofile.fullname%>" required>
+                        <div class="invalid-feedback">Please enter valid name</div>
+                    </div>
+                    <div>
+                        <input type="email" name="email" placeholder="E-mail" value="<%=userprofile.email%>" required>
+                        <div class="invalid-feedback">Please enter valid email</div>
+                    </div>
+                    
+                    <div>
+                        <input list="professions" name="profession" placeholder="Profession" value="<%= userprofile.profession %>" required>
+                        <div class="invalid-feedback">Please select a profession</div>
+                    </div>
 
                     <datalist id="professions">
                         <option value="Software Engineer">
@@ -32,13 +43,31 @@
                         <option value="Cyber Security Analyst">
                         <option value="DevOps Engineer">
                         <option value="Student">
+                        <option value="other">
                     </datalist>
-                    <input type="file" name="resume" placeholder="Resume URL (optional)">
-                    <input type="tel" name="contact" placeholder="Contact Number" required>
-                    <input type="text" name="address" placeholder="Address">
-                    <input type="number" maxlength="6" name="pincode" placeholder="Pincode">
+                
+                    <div>
+                        <input type="file" id="resume" name="resume" accept="application/pdf">
+                        <div class="invalid-feedback">Please enter a valid resume</div>
+                    </div>
+                    
+                    <div>
+                        <input type="tel" name="contact" placeholder="Contact" value="<%= userprofile.contact %>" required>
+                        <div class="invalid-feedback" >Please enter a valid contact</div>
+                    </div>
+                    
+                    <div>
+                        <input type="text" name="address" placeholder="Address" value="<%= userprofile.address %>">
+                        <div class="invalid-feedback">Please enter a address</div>
+                    </div>
+                    <div>
+                        <input type="number" name="pincode" placeholder="Pincode"  value="<%= userprofile.pincode %>">
+                        <div class="invalid-feedback">PLease enter a pincode </div>
+                    </div>
+                    
                     <button type="submit">Save Profile</button>
                 </form>
             </div>
         </div>
     </div>
+

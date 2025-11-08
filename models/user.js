@@ -22,16 +22,12 @@ const userSchema = new Schema({
     },
     contact : {
         type : Number,
-        default : 0
-        
     },
     address : {
         type : String,
-        default : ""
     },
     pincode : {
         type : Number,
-        default : 0
     }
     
 })

@@ -1,3 +1,9 @@
+if(process.env.NODE_ENV != "production"){
+  require("dotenv").config();
+}
+console.log(process.env.ATLAS_URL);
+
+
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
@@ -14,6 +20,7 @@ const Employee = require("./models/employee.js");
 const methodOverride = require("method-override");
 
 const session = require("express-session");
+const MongoStore = require("connect-mongo");
 
 const aboutRouter = require("./routes/about.js");
 const orvaneRouter = require("./routes/orvane.js");
@@ -23,6 +30,8 @@ const employeeRouter = require("./routes/employee.js");
 const serviceRouter = require("./routes/service.js");
 
 
+const db_URL = process.env.ATLAS_URL;
+
 
 
 main()
@@ -30,8 +39,11 @@ main()
 .catch((err) => console.log(err));
 
 async function main() {
-  await mongoose.connect('mongodb://127.0.0.1:27017/orvane');
+  await mongoose.connect(db_URL);
 }
+
+
+
 
 
 app.use(express.static(path.join(__dirname,"public")));
@@ -47,7 +59,20 @@ app.engine("ejs", ejsMate)
 app.set("view engine", "ejs");
 app.set("views",path.join(__dirname, "views"));
 
+const store = MongoStore.create({
+  mongoUrl : db_URL,
+  crypto : {
+    secret : process.env.SECRET
+  },
+  touchAfter : 24 * 3600
+})
+
+store.on("error", () => {
+  console.log("Error in Mongo Session Store", err)
+})
+
 const sessionOptions = {
+  store,
   secret : "musupersecretcode",
   resave : false,
   saveUninitialized : false,
@@ -74,17 +99,17 @@ app.use((req, res, next) => {
     next();
 });
 
-
-
-
-
-
 app.use("/about", aboutRouter);
 app.use("/orvane",orvaneRouter);
 app.use("/user",userRouter);
 app.use("/portfolio",portfolioRouter );
 app.use("/employee", employeeRouter);
 app.use("/service", serviceRouter);
+
+
+
+
+
 
 
 app.use((req, res, next) => {

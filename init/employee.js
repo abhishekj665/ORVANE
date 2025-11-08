@@ -2,9 +2,11 @@ const mongoose = require("mongoose");
 const Employee = require("../models/employee.js");
 const { employeeData } = require("./employeedata.js");
 
+const db_URL = process.env.ATLAS_URL;
+
 async function main() {
   try {
-    await mongoose.connect('mongodb://127.0.0.1:27017/orvane');
+    await mongoose.connect(db_URL);
     console.log("Connected to DB");
 
     

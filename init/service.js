@@ -2,12 +2,14 @@ const mongoose = require("mongoose");
 const serviceData = require("./data");
 const Service = require("../models/service");
 
+const db_URL = process.env.ATLAS_URL;
+
 main()
 .then(() => console.log("Connected to DB"))
 .catch((err) => console.log(err));
 
 async function main() {
-  await mongoose.connect('mongodb://127.0.0.1:27017/orvane');
+  await mongoose.connect(db_URL);
 }
 
 const initData = async() => {

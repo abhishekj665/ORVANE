@@ -8,6 +8,12 @@ const User = require("../models/user");
 
 const userController = require("../controllers/user");
 
+const {isLoggedIn} = require("../middlewares");
+
+const multer = require("multer");
+const { storage } = require("../CloudinaryConfig");
+const upload = multer({ storage });
+
 router
   .route("/signup")
   .get(userController.renderSignUpPage)
@@ -26,40 +32,13 @@ router
   );
 
 
-router.get("/profile/:id", wrapAsync( async(req, res) => {
-  try{
-    let {id} = req.params;
-    let userprofile = await User.findById(id);
-    res.render("users/profile.ejs",{userprofile});
-  }catch{
-    req.flash("error", "Something went wrong !");
-    res.redirect("/orvane");
-  }
-}))
+router.route("/profile/:id").get(isLoggedIn, userController.profile);
 
-router.get("/postprofile/:id", wrapAsync( async(req, res) => {
-   try{
-    let {id} = req.params;
-    res.render("users/postprofile.ejs",{id});
-  }catch{
-    req.flash("error", "Something went wrong !");
-    res.redirect("/orvane");
-  }
-}))
+router
+  .route("/postprofile/:id")
+  .get(isLoggedIn, userController.postprofilepage)
+  .put(upload.single("resume"), isLoggedIn, userController.uploadprofile);
 
-router.put("/postprofile/:id", wrapAsync( async(req, res) => {
-  try{
-    let {id} = req.params;
-    console.log(id);
-    let userProfileData = req.body;
-    console.log(userProfileData);
-    await User.findByIdAndUpdate(id,userProfileData);
-    res.redirect(`/user/profile/${id}`);
-  }catch{
-    req.flash("error", "Something went wrong");
-    res.redirect("/orvane");
-  }
-}))
 
 router.get("/log-out", userController.logout);
 
