@@ -16,6 +16,14 @@ body {
   color: #fff;
 }
 
+@media(max-width:350px){
+  .navbar{
+    padding: 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+}
+
 .hero::before {
   content: "";
   position: absolute;
