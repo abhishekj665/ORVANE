@@ -11,6 +11,7 @@ const wrapAsync = require("./utils/wrapAsync.js");
 const ExpressError = require("./utils/ExpressError.js");
 const flash = require("connect-flash");
 const Employee = require("./models/employee.js");
+const methodOverride = require("method-override");
 
 const session = require("express-session");
 
@@ -35,6 +36,11 @@ async function main() {
 
 app.use(express.static(path.join(__dirname,"public")));
 app.use(express.urlencoded({extended : true}));
+app.use(methodOverride(function (req, res) {
+  if (req.query && typeof req.query._method === 'string') {
+    return req.query._method;
+  }
+}));
 
 
 app.engine("ejs", ejsMate)

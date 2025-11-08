@@ -1,0 +1,44 @@
+<% layout("/layouts/boilerplate.ejs") -%>
+
+
+
+    <div class="row">
+        <div class="col-6 offset-3">
+            <div class="form-container">
+                <div class="row">
+                    <div class="col-2 offset-4">
+                        <div style="background-color: #fff;">
+                            <div class="userprofile-image">
+                                <img src="https://imgs.search.brave.com/m12gFeEaYTH9TW9JHo1E4K4UFZBIAGpFdv-O_jdbty0/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90My5m/dGNkbi5uZXQvanBn/LzAzLzQ2LzgzLzk2/LzM2MF9GXzM0Njgz/OTY4M182bkFQemJo/cFNrSXBiOHBtQXd1/ZmtDN2M1ZUQ3d1l3/cy5qcGc" alt="image">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <form method="POST" action="/user/postprofile/<%=id%>?_method=PUT">
+                    <h2>Upload Your Profile</h2>
+                    <input type="text" name="fullname" placeholder="Full Name" required>
+                    <input list="professions" name="profession" placeholder="Profession" required>
+
+                    <datalist id="professions">
+                        <option value="Software Engineer">
+                        <option value="Web Developer">
+                        <option value="Full Stack Developer">
+                        <option value="Data Scientist">
+                        <option value="Machine Learning Engineer">
+                        <option value="Business Analyst">
+                        <option value="Cloud Engineer">
+                        <option value="UI/UX Designer">
+                        <option value="Cyber Security Analyst">
+                        <option value="DevOps Engineer">
+                        <option value="Student">
+                    </datalist>
+                    <input type="file" name="resume" placeholder="Resume URL (optional)">
+                    <input type="tel" name="contact" placeholder="Contact Number" required>
+                    <input type="text" name="address" placeholder="Address">
+                    <input type="number" maxlength="6" name="pincode" placeholder="Pincode">
+                    <button type="submit">Save Profile</button>
+                </form>
+            </div>
+        </div>
+    </div>

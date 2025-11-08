@@ -1,0 +1,102 @@
+
+
+
+.userprofile-card{
+    border: none;
+    margin-bottom: 2rem;
+    background-color: #fff;
+}
+
+@media(max-width:350px){
+    .offset-3{
+        margin-left:0;
+    }
+    .col-6{
+        width : auto;
+    }
+}
+
+/* Form Container */
+.form-container {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.form-container h2 {
+    margin-bottom: 15px;
+}
+
+.form-container input {
+    width: 100%;
+    padding: 12px;
+    margin: 7px 0;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+.form-container button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.form-container button:hover {
+    background: #0056c1;
+}
+
+.userpage-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3rem;
+}
+
+.userprofile-card {
+    background: white;
+    width: 400px;
+    padding: 25px;
+    border-radius: 14px;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.userprofile-image img {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #007bff;
+    margin-bottom: 12px;
+}
+
+.userprofile-card h1 {
+    margin: 0;
+    font-size: 26px;
+}
+
+.userprofile-profession {
+    font-size: 18px;
+    color: #007bff;
+    font-weight: bold;
+    margin-bottom: 18px;
+}
+
+.userprofile-info {
+    text-align: left;
+    margin-top: 10px;
+}
+
+.userprofile-info p {
+    margin: 6px 0;
+    font-size: 16px;
+}
+
+

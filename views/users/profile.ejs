@@ -1,0 +1,56 @@
+<% layout("/layouts/boilerplate.ejs") -%>
+
+<body>
+    <div class="userpage-wrapper">
+        
+        <% if(userprofile){ %>
+
+            <div class="userprofile-card">
+
+                <div class="userprofile-image">
+                    <img src="https://imgs.search.brave.com/m12gFeEaYTH9TW9JHo1E4K4UFZBIAGpFdv-O_jdbty0/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90My5m/dGNkbi5uZXQvanBn/LzAzLzQ2LzgzLzk2/LzM2MF9GXzM0Njgz/OTY4M182bkFQemJo/cFNrSXBiOHBtQXd1/ZmtDN2M1ZUQ3d1l3/cy5qcGc" alt="User Photo">
+                </div>
+
+                <% if(userprofile.fullname){ %>
+                    <h1><%= userprofile.fullname %></h1>
+                <% } else { %>
+                    <P>Your Data Not Found</P>
+                    <form method="GET" action="/user/postprofile/<%=userprofile._id%>"><button class="btn btn-success" >Upload it first</button></form>
+                <% } %>
+
+                <% if(userprofile.profession){ %>
+                    <p class="userprofile-profession"><%= userprofile.profession %></p>
+                <% } %>
+
+                <div class="userprofile-info">
+
+                    <% if(userprofile.contact){ %>
+                        <p><strong>Contact:</strong> <%= userprofile.contact %></p>
+                    <% } %>
+
+                    <% if(userprofile.address){ %>
+                        <p><strong>Address:</strong> <%= userprofile.address %></p>
+                    <% } %>
+
+                    <% if(userprofile.pincode){ %>
+                        <p><strong>Pincode:</strong> <%= userprofile.pincode %></p>
+                    <% } %>
+
+                    <% if(userprofile.resume){ %>
+                        <p><strong>Resume:</strong> 
+                            <a href="<%= userprofile.resume %>" target="_blank">View File</a>
+                        </p>
+                    <% } %>
+                </div>
+                <form method="GET" action="/user/postprofile/<%=userprofile._id%>"><button class="btn btn-success" >Edit Data</button></form>
+
+            </div>
+
+        <% } else { %>
+            <h2 style="text-align:center;">No user profile found&nbsp;&nbsp;</h2>
+            <
+        <% } %>
+
+        
+
+    </div>

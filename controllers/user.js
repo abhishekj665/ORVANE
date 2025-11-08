@@ -47,7 +47,7 @@ module.exports.logout =  (req, res) => {
                 res.redirect("/");
             }
             res.clearCookie('connect.sid');
-            res.redirect("/orvane/log-in");
+            res.redirect("/user/log-in");
         })
     })
 }

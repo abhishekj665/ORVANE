@@ -4,6 +4,8 @@ const router = express.Router({mergeParams : true});
 const Service = require("../models/service");
 const Project = require("../models/project");
 
+const Task = require("../models/task");
+
 const wrapAsync = require("../utils/wrapAsync");
 const ExpressError = require("../utils/ExpressError");
 
@@ -21,10 +23,13 @@ router.get("/post-project/:id", isLoggedIn, wrapAsync( async(req, res) => {
 }))
 
 router.post("/post-project", isLoggedIn, wrapAsync( async(req, res) => {
+    console.log("Hello")
     try{
-        let newProject = new Project(req.body.project);
-        newProject.client_name = res.locals.user._id;
-        await newProject.save();
+        let newTask = new Task(req.body.task);
+        console.log(req.body)
+        newTask.client = res.locals.user._id;
+        console.log(newTask);
+        await newTask.save();
         req.flash("success",`Congratulations  ${res.locals.user.username} , Your project request has been submitted. Our manager will reach you soon.`);
         res.redirect("/orvane");
     }catch{

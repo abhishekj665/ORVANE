@@ -41,7 +41,7 @@
                 style="color: #2b6cb0;"></i>&nbsp;<%= user.username %></span>
           </a>
           <ul class="dropdown-menu" aria-labelledby="aboutDropdown">
-            <li><a class="dropdown-item" href="#">Profile</a></li>
+            <li><a class="dropdown-item" href="/user/profile/<%=user._id%>">Profile</a></li>
             <li><a class="dropdown-item" href="/user/signup">SignUp</a></li>
             <li><a href="/user/log-out"
                 style="text-decoration: none;color: rgb(237, 16, 16); font-size: large;margin-left: 1rem;" id="dropdown-logout" >Logout</a>

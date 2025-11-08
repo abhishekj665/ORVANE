@@ -8,6 +8,7 @@
       <p>Building digital experiences that transform ideas into impact.</p>
     </div>
   </header>
+  
 
   <section class="services-section">
     <div class="container services-grid">
@@ -15,7 +16,7 @@
       <div class="service-card">
         <div class="icon"><i class="fa-solid fa-bolt" style="color: #51c8c6;"></i></div>
         <h2><%= service.title %></h2>
-        <p>We craft modern, scalable web applications using cutting-edge technologies that deliver speed, stability, and sleek design.</p>
+        <p><%= service.description %></p>
         <form action="/service/post-project/<%=service._id%>"><button class="btn post-btn">Post a Project</button></form>
       </div>
       <% } %>
