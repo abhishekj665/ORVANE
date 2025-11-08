@@ -106,6 +106,10 @@ app.use("/portfolio",portfolioRouter );
 app.use("/employee", employeeRouter);
 app.use("/service", serviceRouter);
 
+app.get("/", (req, res) => {
+  res.render("pages/home.ejs");
+})
+
 
 
 
