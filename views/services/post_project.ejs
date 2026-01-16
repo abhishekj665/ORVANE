@@ -5,36 +5,40 @@
             <br>
             <h2>POST YOUR PROJECT -</h2>
             <br>
-    <form method="POST" action="/service/post-project" novalidate class="needs-validation" >
+    <form method="POST" action="/service/post-project" novalidate  class="needs-validation" >
         <div class="mb-3">
-            <label for="title" class="form-label">Title</label>
+            <label for="title" class="form-label"  >Title</label>
             <input name="task[title]" placeholder="Add a Title of Project" type="text" class="form-control" required>
+            <div class="invalid-feedback">Enter Valid Title</div>
             <div class="valid-feedback">Title Looks Good.</div>
         </div>
 
         <div class="mb-3">
-            <label for="domain" class="form-label">Domain</label>
+            <label for="domain"  class="form-label">Domain</label>
             <input name="task[domain]" value="<%-service.title%>" type="text" class="form-control" readonly required> 
+            <div class="invalid-feedback">enter valid domain</div>
             <div class="valid-feedback">Project Domain</div>
         </div>
 
         <div class="mb-3">
-            <label for="requirments" class="form-label">Requirments</label>
+            <label for="requirments"  class="form-label">Requirments</label>
             <textarea name="task[requirments]" placeholder="Enter Your Requirments" type="text" class="form-control" required></textarea>
+            
             <div class="invalid-feedback">Please Enter Your Requirments</div>
         </div>
 
 
         <div class="mb-3">
-            <label for="deadline" class="form-label">Project Estimated Deadline</label>
+            <label for="deadline"  class="form-label">Project Estimated Deadline</label>
             <input name="task[deadline]" placeholder="Enter Date" type="date" class="form-control" required></input>
+            
             <div class="invalid-feedback">Please Enter A Deadline Date</div>
         </div>
         
         
         <div class="row">
             <div class="mb-3 col-md-4">
-                <label for="price" class="form-label">Price (In Dollars)</label>
+                <label for="price"  class="form-label">Price (In Dollars)</label>
                 <input name="task[price]" placeholder="Enter Price in dollar" type="number" class="form-control" value="2000" min="2000" required>
                 <div class="invalid-feedback" style="color: rgb(218, 90, 90);font-family: Arial">Enter a Valid Price</div>
                 <div class="valid-feedback" style="color: rgb(92, 208, 92);">Note - Project Price is Uncertain.</div>
