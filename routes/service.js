@@ -23,12 +23,12 @@ router.get("/post-project/:id", isLoggedIn, wrapAsync( async(req, res) => {
 }))
 
 router.post("/post-project", isLoggedIn, wrapAsync( async(req, res) => {
-    console.log("Hello")
+    
     try{
         let newTask = new Task(req.body.task);
-        console.log(req.body)
+        
         newTask.client = res.locals.user._id;
-        console.log(newTask);
+        
         await newTask.save();
         req.flash("success",`Congratulations  ${res.locals.user.username} , Your project request has been submitted. Our manager will reach you soon.`);
         res.redirect("/orvane");
