@@ -11,7 +11,6 @@ module.exports.signup =  async(req, res) => {
         let {username, email, password} = req.body;
         const newUser = new User({email, username});
         const registeredUser = await User.register(newUser, password);
-        console.log(`new user : ${registeredUser.username}`);
         req.login(registeredUser, err => {
             if (err) return next(err);
             req.flash("success", `Welcome to Orvane Digitals ${username}`);
@@ -87,13 +86,11 @@ module.exports.uploadprofile = async (req, res) => {
     
     if (req.file) {
       user.resume = req.file.path; 
-      console.log("Uploaded File:", req.file);
     }
 
     await user.save();
     res.redirect(`/user/profile/${id}`);
   } catch (err) {
-    console.log(err);
     req.flash("error", "Something went wrong");
     res.redirect("/orvane");
   }
